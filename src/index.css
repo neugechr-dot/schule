@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --color-brand-50: #f4fae8;
+  --color-brand-100: #e6f4c9;
+  --color-brand-200: #cde998;
+  --color-brand-300: #acda5e;
+  --color-brand-400: #88c52d;
+  --color-brand-500: #62a400;
+  --color-brand-600: #518800;
+  --color-brand-700: #447100;
+  --color-brand-800: #375c04;
+  --color-brand-900: #2d4a08;
+
+  --color-ink-50: #f5f6f6;
+  --color-ink-100: #e5e5e5;
+  --color-ink-200: #d8d8d8;
+  --color-ink-400: #999999;
+  --color-ink-600: #575757;
+  --color-ink-800: #393c43;
+  --color-ink-900: #23262d;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: var(--color-ink-900);
+}
+
+.btn-cut {
+  clip-path: polygon(
+    12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px),
+    calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px), 0% 12px
+  );
+}
+
+.btn-cut-sm {
+  clip-path: polygon(
+    8px 0%, calc(100% - 8px) 0%, 100% 8px, 100% calc(100% - 8px),
+    calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px), 0% 8px
+  );
+}
+
+.card-cut {
+  clip-path: polygon(
+    16px 0%, calc(100% - 16px) 0%, 100% 16px, 100% calc(100% - 16px),
+    calc(100% - 16px) 100%, 16px 100%, 0% calc(100% - 16px), 0% 16px
+  );
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.anim-stagger {
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-fade {
+  opacity: 0;
+  animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-stagger,
+  .anim-fade {
+    animation: none;
+    opacity: 1;
+  }
+  .fade-in-section {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
