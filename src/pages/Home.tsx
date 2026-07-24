@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { ArrowRight, CalendarDays, MapPin, Phone } from "lucide-react"
 import FadeIn from "../components/FadeIn"
 import { bildungsgaenge } from "../data/bildungsgaenge"
-import { termine } from "../data/termine"
+import { termine, sprechzeitenSommerferien } from "../data/termine"
 import { news } from "../data/news"
 import { schulinfo } from "../data/schule"
 
@@ -18,7 +18,7 @@ export default function Home() {
       <section className="relative bg-ink-900 text-white overflow-hidden">
         <div
           aria-hidden="true"
-          className="anim-fade absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(98,164,0,0.35),transparent_60%),radial-gradient(ellipse_at_bottom_left,rgba(98,164,0,0.15),transparent_50%)]"
+          className="anim-fade absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(67,173,71,0.35),transparent_60%),radial-gradient(ellipse_at_bottom_left,rgba(67,173,71,0.15),transparent_50%)]"
           style={{ animationDelay: "0.2s" }}
         />
         {/* TODO: Hero-Foto/Video der Schule einsetzen, sobald Bildmaterial vorliegt */}
@@ -52,7 +52,7 @@ export default function Home() {
           >
             <Link
               to="/bildungsgaenge"
-              className="btn-cut inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-400 transition-colors text-white font-medium px-6 py-3.5 group"
+              className="btn-cut inline-flex items-center gap-2 bg-brand-700 hover:bg-brand-800 transition-colors text-white font-medium px-6 py-3.5 group"
             >
               Bildungsgänge entdecken
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
@@ -81,7 +81,7 @@ export default function Home() {
           {bildungsgaenge.map((bg, i) => (
             <FadeIn key={bg.slug} delay={i * 0.1}>
               <Link
-                to="/bildungsgaenge"
+                to={`/bildungsgaenge/${bg.slug}`}
                 className="card-cut group block bg-ink-50 hover:bg-brand-50 transition-colors p-6 h-full"
               >
                 <bg.icon className="w-8 h-8 text-brand-600" aria-hidden="true" />
@@ -131,28 +131,38 @@ export default function Home() {
               </li>
             ))}
           </ul>
+          <div className="card-cut mt-5 border border-ink-100 p-5">
+            <p className="font-medium">Sprechzeiten der Schulleitung</p>
+            <p className="mt-1 text-sm text-ink-600 leading-relaxed">
+              {sprechzeitenSommerferien.hinweis}
+            </p>
+            <p className="mt-2 text-sm text-ink-600 leading-relaxed">
+              {sprechzeitenSommerferien.notfallkontakt}
+            </p>
+          </div>
         </FadeIn>
 
         <FadeIn delay={0.15}>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
             Aktuelles
           </h2>
-          {news.length === 0 ? (
-            <p className="mt-6 text-ink-600">
-              Aktuelle Meldungen werden in Kürze hier erscheinen.
-            </p>
-          ) : (
-            <ul className="mt-6 space-y-4">
-              {news.slice(0, 3).map((n) => (
-                <li key={n.slug} className="card-cut bg-ink-50 p-5">
+          <ul className="mt-6 space-y-4">
+            {news.slice(0, 3).map((n) => (
+              <li key={n.slug}>
+                <Link
+                  to={`/aktuelles/${n.slug}`}
+                  className="card-cut group block bg-ink-50 hover:bg-brand-50 transition-colors p-5"
+                >
                   <time dateTime={n.datum} className="text-sm text-ink-600">
                     {datumFormat.format(new Date(n.datum))}
                   </time>
-                  <p className="mt-1 font-medium">{n.titel}</p>
-                </li>
-              ))}
-            </ul>
-          )}
+                  <p className="mt-1 font-medium group-hover:text-brand-700 transition-colors">
+                    {n.titel}
+                  </p>
+                </Link>
+              </li>
+            ))}
+          </ul>
           <Link
             to="/aktuelles"
             className="mt-6 inline-flex items-center gap-2 text-brand-700 font-medium hover:text-brand-800 group"
@@ -188,7 +198,7 @@ export default function Home() {
             <div className="md:justify-self-end">
               <Link
                 to="/kontakt"
-                className="btn-cut inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-400 transition-colors text-white font-medium px-6 py-3.5 group"
+                className="btn-cut inline-flex items-center gap-2 bg-brand-700 hover:bg-brand-800 transition-colors text-white font-medium px-6 py-3.5 group"
               >
                 Kontakt &amp; Anfahrt
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />

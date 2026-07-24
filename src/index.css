@@ -3,16 +3,16 @@
 @theme {
   --font-sans: "Inter", system-ui, sans-serif;
 
-  --color-brand-50: #f4fae8;
-  --color-brand-100: #e6f4c9;
-  --color-brand-200: #cde998;
-  --color-brand-300: #acda5e;
-  --color-brand-400: #88c52d;
-  --color-brand-500: #62a400;
-  --color-brand-600: #518800;
-  --color-brand-700: #447100;
-  --color-brand-800: #375c04;
-  --color-brand-900: #2d4a08;
+  --color-brand-50: #f0f9f1;
+  --color-brand-100: #daf1db;
+  --color-brand-200: #b6e2b8;
+  --color-brand-300: #84cd86;
+  --color-brand-400: #5fbf62;
+  --color-brand-500: #43ad47;
+  --color-brand-600: #349337;
+  --color-brand-700: #28772a;
+  --color-brand-800: #215e23;
+  --color-brand-900: #1c4a1e;
 
   --color-ink-50: #f5f6f6;
   --color-ink-100: #e5e5e5;

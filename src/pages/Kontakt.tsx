@@ -1,7 +1,7 @@
-import { Mail, MapPin, Phone, Printer, TrainFront } from "lucide-react"
+import { Car, Mail, MapPin, Phone, Printer, TrainFront } from "lucide-react"
 import PageHeader from "../components/PageHeader"
 import FadeIn from "../components/FadeIn"
-import { schulinfo } from "../data/schule"
+import { schulinfo, anreise } from "../data/schule"
 
 export default function Kontakt() {
   return (
@@ -19,7 +19,7 @@ export default function Kontakt() {
             </h2>
             <ul className="mt-8 space-y-5">
               <li className="flex items-start gap-4">
-                <span className="btn-cut-sm bg-brand-500 text-white w-10 h-10 flex items-center justify-center shrink-0">
+                <span className="btn-cut-sm bg-brand-700 text-white w-10 h-10 flex items-center justify-center shrink-0">
                   <MapPin className="w-5 h-5" aria-hidden="true" />
                 </span>
                 <div>
@@ -32,7 +32,7 @@ export default function Kontakt() {
                 </div>
               </li>
               <li className="flex items-start gap-4">
-                <span className="btn-cut-sm bg-brand-500 text-white w-10 h-10 flex items-center justify-center shrink-0">
+                <span className="btn-cut-sm bg-brand-700 text-white w-10 h-10 flex items-center justify-center shrink-0">
                   <Phone className="w-5 h-5" aria-hidden="true" />
                 </span>
                 <div>
@@ -43,7 +43,7 @@ export default function Kontakt() {
                 </div>
               </li>
               <li className="flex items-start gap-4">
-                <span className="btn-cut-sm bg-brand-500 text-white w-10 h-10 flex items-center justify-center shrink-0">
+                <span className="btn-cut-sm bg-brand-700 text-white w-10 h-10 flex items-center justify-center shrink-0">
                   <Printer className="w-5 h-5" aria-hidden="true" />
                 </span>
                 <div>
@@ -52,7 +52,7 @@ export default function Kontakt() {
                 </div>
               </li>
               <li className="flex items-start gap-4">
-                <span className="btn-cut-sm bg-brand-500 text-white w-10 h-10 flex items-center justify-center shrink-0">
+                <span className="btn-cut-sm bg-brand-700 text-white w-10 h-10 flex items-center justify-center shrink-0">
                   <Mail className="w-5 h-5" aria-hidden="true" />
                 </span>
                 <div>
@@ -77,9 +77,19 @@ export default function Kontakt() {
                 Mit Bahn und Bus
               </p>
               <p className="mt-2 text-ink-600 text-sm leading-relaxed">
-                {/* TODO: Anreise-Hinweise von bs-bebra.de (Service → Anreise) übernehmen */}
-                Detaillierte Hinweise zur Anreise mit öffentlichen
-                Verkehrsmitteln folgen in Kürze.
+                {anreise.oeffentlich}
+              </p>
+            </div>
+            <div className="card-cut mt-5 bg-ink-50 p-6">
+              <p className="flex items-center gap-3 font-semibold">
+                <Car className="w-5 h-5 text-brand-600" aria-hidden="true" />
+                Mit dem Auto
+              </p>
+              <p className="mt-2 text-ink-600 text-sm leading-relaxed">
+                {anreise.auto}
+              </p>
+              <p className="mt-2 text-ink-600 text-sm leading-relaxed">
+                {anreise.parken}
               </p>
             </div>
             <div className="card-cut mt-5 bg-ink-100 aspect-video flex items-center justify-center">

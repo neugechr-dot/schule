@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom"
+import { ArrowRight } from "lucide-react"
 import PageHeader from "../components/PageHeader"
 import FadeIn from "../components/FadeIn"
-import { bildungsgaenge, weitereAngebote } from "../data/bildungsgaenge"
+import { bildungsgaenge } from "../data/bildungsgaenge"
+import { angebote } from "../data/angebote"
 
 export default function Bildungsgaenge() {
   const vollzeit = bildungsgaenge.filter((bg) => bg.form === "Vollzeit")
@@ -13,7 +16,7 @@ export default function Bildungsgaenge() {
         subtitle="Vom Mittleren Abschluss bis zum Abitur, von der dualen Ausbildung bis zur Technikerweiterbildung."
       />
 
-      <div className="mx-auto max-w-6xl px-4 md:px-8">
+      <div className="mx-auto max-w-6xl px-4 md:px-8 mb-16">
         {[
           { label: "Vollzeit-Schulformen", items: vollzeit },
           { label: "Teilzeit-Schulformen", items: teilzeit },
@@ -27,9 +30,9 @@ export default function Bildungsgaenge() {
             <div className="mt-8 grid gap-5 md:grid-cols-2">
               {gruppe.items.map((bg, i) => (
                 <FadeIn key={bg.slug} delay={i * 0.1}>
-                  <article className="card-cut bg-ink-50 p-6 md:p-8 h-full">
+                  <article className="card-cut bg-ink-50 p-6 md:p-8 h-full flex flex-col">
                     <div className="flex items-center gap-4">
-                      <span className="btn-cut-sm bg-brand-500 text-white w-12 h-12 flex items-center justify-center shrink-0">
+                      <span className="btn-cut-sm bg-brand-700 text-white w-12 h-12 flex items-center justify-center shrink-0">
                         <bg.icon className="w-6 h-6" aria-hidden="true" />
                       </span>
                       <div>
@@ -42,6 +45,16 @@ export default function Bildungsgaenge() {
                       <span className="text-ink-600">Abschluss:</span>{" "}
                       {bg.abschluss}
                     </p>
+                    <Link
+                      to={`/bildungsgaenge/${bg.slug}`}
+                      className="mt-6 inline-flex items-center gap-2 text-brand-700 font-medium hover:text-brand-800 group self-start"
+                    >
+                      Details und Anmeldung
+                      <ArrowRight
+                        className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                        aria-hidden="true"
+                      />
+                    </Link>
                   </article>
                 </FadeIn>
               ))}
@@ -56,14 +69,17 @@ export default function Bildungsgaenge() {
             </h2>
           </FadeIn>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {weitereAngebote.map((angebot, i) => (
-              <FadeIn key={angebot.name} delay={i * 0.08}>
-                <div className="card-cut border border-ink-100 p-6 h-full">
+            {angebote.map((angebot, i) => (
+              <FadeIn key={angebot.slug} delay={i * 0.08}>
+                <Link
+                  to={`/angebote#${angebot.slug}`}
+                  className="card-cut group block border border-ink-100 hover:bg-brand-50 transition-colors p-6 h-full"
+                >
                   <h3 className="font-semibold text-brand-700">{angebot.name}</h3>
                   <p className="mt-2 text-sm text-ink-600 leading-relaxed">
-                    {angebot.beschreibung}
+                    {angebot.untertitel}
                   </p>
-                </div>
+                </Link>
               </FadeIn>
             ))}
           </div>

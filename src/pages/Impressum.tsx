@@ -1,5 +1,5 @@
 import PageHeader from "../components/PageHeader"
-import { schulinfo, schulleitung } from "../data/schule"
+import { schulinfo, schulleitung, traeger } from "../data/schule"
 
 export default function Impressum() {
   return (
@@ -42,11 +42,14 @@ export default function Impressum() {
         <section aria-labelledby="traeger-heading" className="card-cut bg-ink-50 p-6">
           <h2 id="traeger-heading" className="text-xl font-semibold">Schulträger &amp; Aufsichtsbehörde</h2>
           <p className="mt-3 text-ink-600 leading-relaxed">
-            {/* TODO: Schulträger (vermutlich Landkreis Hersfeld-Rotenburg) und
-                zuständiges Staatliches Schulamt mit dem Träger abstimmen und
-                ergänzen – nicht ohne Freigabe veröffentlichen. */}
-            Die Angaben zu Schulträger und Aufsichtsbehörde werden derzeit
-            redaktionell geprüft und in Kürze ergänzt.
+            Schulträger: {traeger.schultraeger}
+            <br />
+            Aufsichtsbehörde: {traeger.aufsichtsbehoerde}
+          </p>
+          <p className="mt-3 text-xs text-ink-600">
+            {/* TODO: Angaben vor Launch mit dem Schulträger final abstimmen und freigeben lassen */}
+            Hinweis: Diese Angaben sind vor Veröffentlichung noch mit dem
+            Schulträger final abzustimmen und freizugeben.
           </p>
         </section>
       </div>
