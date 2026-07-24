@@ -10,7 +10,7 @@ hochwertige Animationen.
 Referenzprojekt für Look & Feel / Interaktionsmuster: [design.md.txt](design.md.txt)
 (Hero mit Video-Hintergrund, gestaffelte Fade-up-Animationen, klare
 Typografie). Das ist **nur eine Stil-/Interaktionsreferenz** (Farben,
-Animationstiming, Button-Schnittkanten, Aufbau) – Inhalte, Branding und Texte
+Animationstiming, Aufbau) – Inhalte, Branding und Texte
 dort sind fiktiv und werden nicht übernommen.
 
 ## Tech-Stack

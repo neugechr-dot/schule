@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { ArrowRight, CalendarDays, MapPin, Phone } from "lucide-react"
 import FadeIn from "../components/FadeIn"
+import { LiquidMetalButton } from "@/components/ui/liquid-metal-button"
 import { bildungsgaenge } from "../data/bildungsgaenge"
 import { termine, sprechzeitenSommerferien } from "../data/termine"
 import { news } from "../data/news"
@@ -50,19 +51,12 @@ export default function Home() {
             className="anim-stagger mt-10 flex flex-wrap gap-4"
             style={{ animationDelay: "0.55s" }}
           >
-            <Link
-              to="/bildungsgaenge"
-              className="btn-cut inline-flex items-center gap-2 bg-brand-700 hover:bg-brand-800 transition-colors text-white font-medium px-6 py-3.5 group"
-            >
-              Bildungsgänge entdecken
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </Link>
-            <Link
+            <LiquidMetalButton to="/bildungsgaenge" label="Bildungsgänge entdecken" />
+            <LiquidMetalButton
               to="/kontakt"
-              className="btn-cut inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors text-white font-medium px-6 py-3.5"
-            >
-              Kontakt aufnehmen
-            </Link>
+              label="Kontakt aufnehmen"
+              variant="ghost"
+            />
           </div>
         </div>
       </section>
@@ -196,13 +190,7 @@ export default function Home() {
               </div>
             </div>
             <div className="md:justify-self-end">
-              <Link
-                to="/kontakt"
-                className="btn-cut inline-flex items-center gap-2 bg-brand-700 hover:bg-brand-800 transition-colors text-white font-medium px-6 py-3.5 group"
-              >
-                Kontakt &amp; Anfahrt
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </Link>
+              <LiquidMetalButton to="/kontakt" label="Kontakt & Anfahrt" />
             </div>
           </div>
         </FadeIn>
