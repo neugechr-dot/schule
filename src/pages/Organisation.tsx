@@ -56,7 +56,7 @@ export default function Organisation() {
           </FadeIn>
           <div className="mt-8 grid gap-8 lg:grid-cols-2">
             <FadeIn>
-              <div className="card-cut bg-ink-50 p-6">
+              <div className="rounded-2xl bg-ink-50 p-6">
                 <h3 className="font-semibold mb-4">Regulärer Unterricht</h3>
                 <div className="overflow-x-auto">
                   <Stundenplan zeiten={unterrichtszeiten.regulaer} />
@@ -64,7 +64,7 @@ export default function Organisation() {
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <div className="card-cut bg-ink-50 p-6">
+              <div className="rounded-2xl bg-ink-50 p-6">
                 <h3 className="font-semibold mb-4">
                   Fachschule für Technik (Dienstag und Donnerstag)
                 </h3>
@@ -88,7 +88,7 @@ export default function Organisation() {
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {gebaeude.map((g, i) => (
               <FadeIn key={g.nummer} delay={i * 0.06}>
-                <div className="card-cut border border-ink-100 p-6 h-full">
+                <div className="rounded-2xl border border-ink-100 p-6 h-full">
                   <p className="text-xs font-semibold uppercase tracking-wider text-brand-700">
                     {g.nummer}
                   </p>
@@ -103,7 +103,7 @@ export default function Organisation() {
               <img
                 src={asset("/media/schule/lageplan.jpg")}
                 alt="Lageplan des Schulgeländes der Beruflichen Schulen Bebra mit den Gebäuden 1 bis 5"
-                className="card-cut w-full border border-ink-100"
+                className="rounded-2xl w-full border border-ink-100"
                 loading="lazy"
               />
               <figcaption className="mt-2 text-sm text-ink-600">
@@ -125,7 +125,7 @@ export default function Organisation() {
               <img
                 src={asset("/media/schule/organigramm-2020.jpg")}
                 alt="Organigramm der Beruflichen Schulen Bebra mit Schulleitung, Abteilungen und Fachbereichen"
-                className="card-cut w-full border border-ink-100"
+                className="rounded-2xl w-full border border-ink-100"
                 loading="lazy"
               />
               <figcaption className="mt-2 text-sm text-ink-600">

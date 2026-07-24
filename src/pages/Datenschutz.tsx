@@ -21,7 +21,7 @@ export default function Datenschutz() {
           </p>
         </section>
 
-        <section aria-labelledby="entwurf-heading" className="card-cut bg-ink-50 p-6">
+        <section aria-labelledby="entwurf-heading" className="rounded-2xl bg-ink-50 p-6">
           <h2 id="entwurf-heading" className="text-xl font-semibold">Hinweis</h2>
           <p className="mt-3 text-ink-600 leading-relaxed">
             {/* TODO: Vollständige Datenschutzerklärung mit Schulträger/

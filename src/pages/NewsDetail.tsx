@@ -53,7 +53,7 @@ export default function NewsDetail() {
               <img
                 src={asset(leitbild.src)}
                 alt={leitbild.alt}
-                className="card-cut w-full"
+                className="rounded-2xl w-full"
                 loading="lazy"
               />
               {leitbild.bildunterschrift && (
@@ -85,7 +85,7 @@ export default function NewsDetail() {
                   <img
                     src={asset(bild.src)}
                     alt={bild.alt}
-                    className="card-cut w-full"
+                    className="rounded-2xl w-full"
                     loading="lazy"
                   />
                   {bild.bildunterschrift && (

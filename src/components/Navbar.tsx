@@ -44,8 +44,10 @@ export default function Navbar() {
   const [openMenu, setOpenMenu] = useState<string | null>(null)
 
   const itemClass = (isActive: boolean) =>
-    `px-4 py-2 text-sm font-medium transition-colors btn-cut-sm ${
-      isActive ? "bg-brand-700 text-white" : "text-ink-800 hover:bg-brand-50 hover:text-brand-700"
+    `px-4 py-2 text-sm font-medium rounded-full ${
+      isActive
+        ? "btn-liquid"
+        : "text-ink-800 hover:bg-brand-50 hover:text-brand-700 transition-colors"
     }`
 
   return (
@@ -87,26 +89,24 @@ export default function Navbar() {
                     <ChevronDown className="w-3.5 h-3.5" aria-hidden="true" />
                   </NavLink>
                   {openMenu === link.to && (
-                    <ul className="absolute left-0 top-full pt-2 min-w-60">
-                      <div className="card-cut bg-white border border-ink-100 shadow-lg py-2">
-                        {link.children.map((child) => (
-                          <li key={child.to}>
-                            <NavLink
-                              to={child.to}
-                              end
-                              className={({ isActive }) =>
-                                `block px-4 py-2.5 text-sm transition-colors ${
-                                  isActive
-                                    ? "text-brand-700 font-semibold bg-brand-50"
-                                    : "text-ink-800 hover:bg-brand-50 hover:text-brand-700"
-                                }`
-                              }
-                            >
-                              {child.label}
-                            </NavLink>
-                          </li>
-                        ))}
-                      </div>
+                    <ul className="absolute left-0 top-full min-w-60 rounded-2xl overflow-hidden bg-white border border-ink-100 shadow-lg py-2">
+                      {link.children.map((child) => (
+                        <li key={child.to}>
+                          <NavLink
+                            to={child.to}
+                            end
+                            className={({ isActive }) =>
+                              `block px-4 py-2.5 text-sm transition-colors ${
+                                isActive
+                                  ? "text-brand-700 font-semibold bg-brand-50"
+                                  : "text-ink-800 hover:bg-brand-50 hover:text-brand-700"
+                              }`
+                            }
+                          >
+                            {child.label}
+                          </NavLink>
+                        </li>
+                      ))}
                     </ul>
                   )}
                 </>
@@ -139,8 +139,8 @@ export default function Navbar() {
                 end
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `block px-4 py-3 text-base font-medium btn-cut-sm ${
-                    isActive ? "bg-brand-700 text-white" : "text-ink-800 hover:bg-brand-50"
+                  `block px-4 py-3 text-base font-medium rounded-full ${
+                    isActive ? "btn-liquid" : "text-ink-800 hover:bg-brand-50"
                   }`
                 }
               >

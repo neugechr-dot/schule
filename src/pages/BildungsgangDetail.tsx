@@ -37,7 +37,7 @@ export default function BildungsgangDetail() {
         </Link>
 
         <FadeIn className="mt-8">
-          <dl className="card-cut bg-ink-50 p-6 grid gap-5 sm:grid-cols-3">
+          <dl className="rounded-2xl bg-ink-50 p-6 grid gap-5 sm:grid-cols-3">
             <div>
               <dt className="text-xs font-semibold uppercase tracking-wider text-brand-700">
                 Schulform
@@ -67,7 +67,7 @@ export default function BildungsgangDetail() {
               </h2>
               <div className="mt-6 grid gap-5 md:grid-cols-2">
                 {bg.schwerpunkte.map((s) => (
-                  <div key={s.name} className="card-cut border border-ink-100 p-6">
+                  <div key={s.name} className="rounded-2xl border border-ink-100 p-6">
                     <h3 className="font-semibold text-brand-700">{s.name}</h3>
                     <p className="mt-2 text-sm text-ink-600 leading-relaxed">{s.text}</p>
                   </div>
@@ -111,7 +111,7 @@ export default function BildungsgangDetail() {
                   <img
                     src={asset("/media/angebote/fos-schulwesen.jpg")}
                     alt="Schaubild zur Einordnung der Fachoberschule im hessischen Schulwesen"
-                    className="card-cut w-full border border-ink-100"
+                    className="rounded-2xl w-full border border-ink-100"
                   />
                   <figcaption className="mt-2 text-sm text-ink-600">
                     Einordnung der FOS im hessischen Schulwesen
@@ -121,7 +121,7 @@ export default function BildungsgangDetail() {
                   <img
                     src={asset("/media/angebote/fos-aufnahmevoraussetzungen.jpg")}
                     alt="Tabelle mit den Aufnahmevoraussetzungen für die Fachoberschule"
-                    className="card-cut w-full border border-ink-100"
+                    className="rounded-2xl w-full border border-ink-100"
                   />
                   <figcaption className="mt-2 text-sm text-ink-600">
                     Aufnahmevoraussetzungen im Überblick

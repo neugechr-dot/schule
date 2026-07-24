@@ -39,7 +39,7 @@ export default function Impressum() {
           </ul>
         </section>
 
-        <section aria-labelledby="traeger-heading" className="card-cut bg-ink-50 p-6">
+        <section aria-labelledby="traeger-heading" className="rounded-2xl bg-ink-50 p-6">
           <h2 id="traeger-heading" className="text-xl font-semibold">Schulträger &amp; Aufsichtsbehörde</h2>
           <p className="mt-3 text-ink-600 leading-relaxed">
             Schulträger: {traeger.schultraeger}

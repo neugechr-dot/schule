@@ -45,7 +45,7 @@ export default function Service() {
         ))}
 
         <FadeIn className="mt-16">
-          <div className="card-cut bg-ink-50 p-6">
+          <div className="rounded-2xl bg-ink-50 p-6">
             <h2 className="text-xl font-semibold">Vertretungsplan</h2>
             <p className="mt-3 text-ink-600 leading-relaxed">
               {/* TODO: Auf der Altseite war der Menüpunkt „Vertretung" verlinkt, die Seite liefert

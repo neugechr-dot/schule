@@ -23,7 +23,7 @@ export default function Aktuelles() {
         <div className="grid gap-5 md:grid-cols-2">
           {news.map((n, i) => (
             <FadeIn key={n.slug} delay={i * 0.08}>
-              <article className="card-cut bg-ink-50 h-full flex flex-col overflow-hidden">
+              <article className="rounded-2xl bg-ink-50 h-full flex flex-col overflow-hidden">
                 {n.bilder[0] && (
                   <img
                     src={asset(n.bilder[0].src)}

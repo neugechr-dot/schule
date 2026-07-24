@@ -35,7 +35,7 @@ export default function Jubilaeum() {
                 key={bild.src}
                 src={asset(bild.src)}
                 alt={bild.alt}
-                className="card-cut w-full border border-ink-100"
+                className="rounded-2xl w-full border border-ink-100"
                 loading="lazy"
               />
             ))}
@@ -53,7 +53,7 @@ export default function Jubilaeum() {
             </h2>
             <ul className="mt-8 space-y-4">
               {jubilaeum.veranstaltungen.map((v, i) => (
-                <li key={`${v.datum}-${i}`} className="card-cut bg-ink-50 p-5">
+                <li key={`${v.datum}-${i}`} className="rounded-2xl bg-ink-50 p-5">
                   <time dateTime={v.datum} className="text-sm font-semibold text-brand-700">
                     {datumFormat.format(new Date(v.datum))}
                   </time>

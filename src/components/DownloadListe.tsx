@@ -14,7 +14,7 @@ export default function DownloadListe({ items }: DownloadListeProps) {
             href={asset(item.datei)}
             target="_blank"
             rel="noreferrer"
-            className="btn-cut-sm flex items-center gap-3 bg-ink-50 hover:bg-brand-50 transition-colors px-4 py-3 group"
+            className="rounded-xl flex items-center gap-3 bg-ink-50 hover:bg-brand-50 transition-colors px-4 py-3 group"
           >
             <FileText className="w-5 h-5 text-brand-700 shrink-0" aria-hidden="true" />
             <span className="font-medium group-hover:text-brand-700 transition-colors">

@@ -30,9 +30,9 @@ export default function Bildungsgaenge() {
             <div className="mt-8 grid gap-5 md:grid-cols-2">
               {gruppe.items.map((bg, i) => (
                 <FadeIn key={bg.slug} delay={i * 0.1}>
-                  <article className="card-cut bg-ink-50 p-6 md:p-8 h-full flex flex-col">
+                  <article className="rounded-2xl bg-ink-50 p-6 md:p-8 h-full flex flex-col">
                     <div className="flex items-center gap-4">
-                      <span className="btn-cut-sm bg-brand-700 text-white w-12 h-12 flex items-center justify-center shrink-0">
+                      <span className="rounded-full bg-brand-700 text-white w-12 h-12 flex items-center justify-center shrink-0">
                         <bg.icon className="w-6 h-6" aria-hidden="true" />
                       </span>
                       <div>
@@ -73,7 +73,7 @@ export default function Bildungsgaenge() {
               <FadeIn key={angebot.slug} delay={i * 0.08}>
                 <Link
                   to={`/angebote#${angebot.slug}`}
-                  className="card-cut group block border border-ink-100 hover:bg-brand-50 transition-colors p-6 h-full"
+                  className="rounded-2xl group block border border-ink-100 hover:bg-brand-50 transition-colors p-6 h-full"
                 >
                   <h3 className="font-semibold text-brand-700">{angebot.name}</h3>
                   <p className="mt-2 text-sm text-ink-600 leading-relaxed">

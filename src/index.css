@@ -29,27 +29,6 @@ body {
   color: var(--color-ink-900);
 }
 
-.btn-cut {
-  clip-path: polygon(
-    12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px),
-    calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px), 0% 12px
-  );
-}
-
-.btn-cut-sm {
-  clip-path: polygon(
-    8px 0%, calc(100% - 8px) 0%, 100% 8px, 100% calc(100% - 8px),
-    calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px), 0% 8px
-  );
-}
-
-.card-cut {
-  clip-path: polygon(
-    16px 0%, calc(100% - 16px) 0%, 100% 16px, 100% calc(100% - 16px),
-    calc(100% - 16px) 100%, 16px 100%, 0% calc(100% - 16px), 0% 16px
-  );
-}
-
 .btn-liquid {
   border-radius: 9999px;
   position: relative;

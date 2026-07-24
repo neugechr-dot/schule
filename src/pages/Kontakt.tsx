@@ -19,7 +19,7 @@ export default function Kontakt() {
             </h2>
             <ul className="mt-8 space-y-5">
               <li className="flex items-start gap-4">
-                <span className="btn-cut-sm bg-brand-700 text-white w-10 h-10 flex items-center justify-center shrink-0">
+                <span className="rounded-full bg-brand-700 text-white w-10 h-10 flex items-center justify-center shrink-0">
                   <MapPin className="w-5 h-5" aria-hidden="true" />
                 </span>
                 <div>
@@ -32,7 +32,7 @@ export default function Kontakt() {
                 </div>
               </li>
               <li className="flex items-start gap-4">
-                <span className="btn-cut-sm bg-brand-700 text-white w-10 h-10 flex items-center justify-center shrink-0">
+                <span className="rounded-full bg-brand-700 text-white w-10 h-10 flex items-center justify-center shrink-0">
                   <Phone className="w-5 h-5" aria-hidden="true" />
                 </span>
                 <div>
@@ -43,7 +43,7 @@ export default function Kontakt() {
                 </div>
               </li>
               <li className="flex items-start gap-4">
-                <span className="btn-cut-sm bg-brand-700 text-white w-10 h-10 flex items-center justify-center shrink-0">
+                <span className="rounded-full bg-brand-700 text-white w-10 h-10 flex items-center justify-center shrink-0">
                   <Printer className="w-5 h-5" aria-hidden="true" />
                 </span>
                 <div>
@@ -52,7 +52,7 @@ export default function Kontakt() {
                 </div>
               </li>
               <li className="flex items-start gap-4">
-                <span className="btn-cut-sm bg-brand-700 text-white w-10 h-10 flex items-center justify-center shrink-0">
+                <span className="rounded-full bg-brand-700 text-white w-10 h-10 flex items-center justify-center shrink-0">
                   <Mail className="w-5 h-5" aria-hidden="true" />
                 </span>
                 <div>
@@ -71,7 +71,7 @@ export default function Kontakt() {
             <h2 id="anfahrt-heading" className="text-2xl md:text-3xl font-semibold tracking-tight">
               Anfahrt
             </h2>
-            <div className="card-cut mt-8 bg-ink-50 p-6">
+            <div className="rounded-2xl mt-8 bg-ink-50 p-6">
               <p className="flex items-center gap-3 font-semibold">
                 <TrainFront className="w-5 h-5 text-brand-600" aria-hidden="true" />
                 Mit Bahn und Bus
@@ -80,7 +80,7 @@ export default function Kontakt() {
                 {anreise.oeffentlich}
               </p>
             </div>
-            <div className="card-cut mt-5 bg-ink-50 p-6">
+            <div className="rounded-2xl mt-5 bg-ink-50 p-6">
               <p className="flex items-center gap-3 font-semibold">
                 <Car className="w-5 h-5 text-brand-600" aria-hidden="true" />
                 Mit dem Auto
@@ -92,7 +92,7 @@ export default function Kontakt() {
                 {anreise.parken}
               </p>
             </div>
-            <div className="card-cut mt-5 bg-ink-100 aspect-video flex items-center justify-center">
+            <div className="rounded-2xl mt-5 bg-ink-100 aspect-video flex items-center justify-center">
               {/* TODO: Karte einbinden – Datenschutz klären (OpenStreetMap-Embed oder statisches Kartenbild) */}
               <p className="text-ink-600 text-sm px-6 text-center">
                 Kartenansicht folgt – bis dahin:{" "}

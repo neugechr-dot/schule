@@ -50,7 +50,7 @@ export default function Angebote() {
               )}
 
               {angebot.kontakt && (
-                <div className="card-cut mt-6 bg-ink-50 p-6">
+                <div className="rounded-2xl mt-6 bg-ink-50 p-6">
                   <p className="font-semibold">{angebot.kontakt.name}</p>
                   {angebot.kontakt.rolle && (
                     <p className="text-sm text-brand-700 font-medium">{angebot.kontakt.rolle}</p>
@@ -67,7 +67,7 @@ export default function Angebote() {
                 <img
                   src={asset(angebot.bild.src)}
                   alt={angebot.bild.alt}
-                  className="card-cut mt-6 w-full border border-ink-100"
+                  className="rounded-2xl mt-6 w-full border border-ink-100"
                   loading="lazy"
                 />
               )}

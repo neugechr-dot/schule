@@ -29,7 +29,7 @@ export default function Schule() {
             </h2>
             <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {schulleitung.slice(0, 3).map((person) => (
-                <div key={person.name} className="card-cut bg-ink-50 overflow-hidden">
+                <div key={person.name} className="rounded-2xl bg-ink-50 overflow-hidden">
                   {person.foto && (
                     <img
                       src={asset(person.foto)}
@@ -104,7 +104,7 @@ export default function Schule() {
             </h2>
             <div className="mt-8 space-y-8">
               {auszeichnungen.map((a) => (
-                <div key={a.slug} className="card-cut bg-ink-50 p-6 md:p-8">
+                <div key={a.slug} className="rounded-2xl bg-ink-50 p-6 md:p-8">
                   <h3 className="text-xl font-semibold">{a.name}</h3>
                   <p className="mt-1 text-sm text-brand-700 font-medium">{a.jahr}</p>
                   <div className="mt-4 space-y-3 max-w-3xl">
@@ -119,7 +119,7 @@ export default function Schule() {
                       {a.teilzertifikate.map((t) => (
                         <li
                           key={t.name}
-                          className="btn-cut-sm bg-white border border-ink-100 px-3 py-1.5 text-sm"
+                          className="rounded-full bg-white border border-ink-100 px-3 py-1.5 text-sm"
                         >
                           {t.name} <span className="text-ink-600">({t.jahr})</span>
                         </li>
@@ -194,7 +194,7 @@ export default function Schule() {
             </h2>
             <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {kooperationen.map((gruppe) => (
-                <div key={gruppe.kategorie} className="card-cut bg-ink-50 p-6">
+                <div key={gruppe.kategorie} className="rounded-2xl bg-ink-50 p-6">
                   <h3 className="font-semibold text-brand-700">{gruppe.kategorie}</h3>
                   <ul className="mt-3 space-y-2 text-sm text-ink-600 leading-relaxed">
                     {gruppe.partner.map((p) => (

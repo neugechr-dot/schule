@@ -16,7 +16,7 @@ function PersonenGrid({ personen }: { personen: Person[] }) {
     <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {personen.map((person, i) => (
         <FadeIn key={person.name} delay={i * 0.06}>
-          <div className="card-cut bg-ink-50 h-full overflow-hidden">
+          <div className="rounded-2xl bg-ink-50 h-full overflow-hidden">
             {person.foto && (
               <img
                 src={asset(person.foto)}
@@ -63,7 +63,7 @@ export default function Team() {
             <h2 id="sekretariat-heading" className="text-2xl md:text-3xl font-semibold tracking-tight">
               Schulsekretariat
             </h2>
-            <div className="mt-6 card-cut bg-ink-50 p-6 max-w-2xl">
+            <div className="mt-6 rounded-2xl bg-ink-50 p-6 max-w-2xl">
               <p className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" aria-hidden="true" />
                 <span className="text-ink-600">{verwaltung.ort}</span>
