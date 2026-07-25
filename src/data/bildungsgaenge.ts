@@ -18,6 +18,13 @@ export interface Abschnitt {
   liste?: string[]
 }
 
+export interface Infovideo {
+  titel: string
+  beschreibung: string
+  datei: string
+  poster: string
+}
+
 export interface Bildungsgang {
   slug: string
   kuerzel: string
@@ -28,6 +35,7 @@ export interface Bildungsgang {
   dauer: string
   icon: LucideIcon
   schwerpunkte?: { name: string; text: string }[]
+  videos?: Infovideo[]
   abschnitte: Abschnitt[]
   dokumente: Dokument[]
 }
@@ -55,6 +63,34 @@ export const bildungsgaenge: Bildungsgang[] = [
       {
         name: "Wirtschaft",
         text: "Wirtschaftswissenschaftliche Grundbildung in allgemeiner Wirtschaftslehre, Finanzwirtschaft, Rechnungswesen und wirtschaftsbezogener Datenverarbeitung.",
+      },
+    ],
+    videos: [
+      {
+        titel: "Überblick",
+        beschreibung:
+          "Einführung in das Berufliche Gymnasium und die Unterschiede zwischen den Schwerpunkten.",
+        datei: "/media/videos/bg-ueberblick.mp4",
+        poster: "/media/videos/bg-ueberblick-poster.jpg",
+      },
+      {
+        titel: "Schwerpunkt Gestaltungs- und Medientechnik",
+        beschreibung:
+          "Einblick in den Schwerpunkt Gestaltungs- und Medientechnik.",
+        datei: "/media/videos/bg-gestaltungs-und-medientechnik.mp4",
+        poster: "/media/videos/bg-gestaltungs-und-medientechnik-poster.jpg",
+      },
+      {
+        titel: "Schwerpunkt Mechatronik",
+        beschreibung: "Einblick in den Schwerpunkt Mechatronik.",
+        datei: "/media/videos/bg-mechatronik.mp4",
+        poster: "/media/videos/bg-mechatronik-poster.jpg",
+      },
+      {
+        titel: "Schwerpunkt Wirtschaft",
+        beschreibung: "Einblick in den Schwerpunkt Wirtschaft.",
+        datei: "/media/videos/bg-wirtschaft.mp4",
+        poster: "/media/videos/bg-wirtschaft-poster.jpg",
       },
     ],
     abschnitte: [

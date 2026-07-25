@@ -1,6 +1,7 @@
 import { Car, Mail, MapPin, Phone, Printer, TrainFront } from "lucide-react"
 import PageHeader from "../components/PageHeader"
 import FadeIn from "../components/FadeIn"
+import Kontaktformular from "../components/Kontaktformular"
 import { schulinfo, anreise } from "../data/schule"
 
 export default function Kontakt() {
@@ -63,6 +64,15 @@ export default function Kontakt() {
                 </div>
               </li>
             </ul>
+          </section>
+
+          <section aria-labelledby="formular-heading" className="mt-12">
+            <h2 id="formular-heading" className="text-2xl md:text-3xl font-semibold tracking-tight">
+              Nachricht schreiben
+            </h2>
+            <div className="mt-8">
+              <Kontaktformular />
+            </div>
           </section>
         </FadeIn>
 

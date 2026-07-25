@@ -77,6 +77,42 @@ export default function BildungsgangDetail() {
           </FadeIn>
         )}
 
+        {bg.videos && (
+          <FadeIn className="mt-12">
+            <section aria-labelledby="videos-heading">
+              <h2 id="videos-heading" className="text-2xl font-semibold tracking-tight">
+                Filme zum Bildungsgang
+              </h2>
+              <p className="mt-3 text-ink-600 leading-relaxed">
+                Schülerinnen und Schüler stellen den Bildungsgang und seine Schwerpunkte vor.
+              </p>
+              <div className="mt-6 grid gap-6 md:grid-cols-2">
+                {bg.videos.map((video) => (
+                  <figure key={video.datei}>
+                    <video
+                      controls
+                      preload="none"
+                      poster={asset(video.poster)}
+                      className="rounded-2xl w-full border border-brand-500 bg-ink-900"
+                    >
+                      <source src={asset(video.datei)} type="video/mp4" />
+                      Ihr Browser kann dieses Video nicht abspielen.{" "}
+                      <a href={asset(video.datei)}>Video herunterladen</a>
+                    </video>
+                    <figcaption className="mt-2">
+                      <span className="block font-medium">{video.titel}</span>
+                      <span className="mt-1 block text-sm text-ink-600 leading-relaxed">
+                        {video.beschreibung}
+                      </span>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+              {/* TODO: Untertitel/Transkripte fehlen - fuer BITV 2.0 bei den Filmen nachreichen */}
+            </section>
+          </FadeIn>
+        )}
+
         {bg.abschnitte.map((abschnitt, i) => (
           <FadeIn key={abschnitt.titel} delay={i * 0.05} className="mt-12">
             <section>
