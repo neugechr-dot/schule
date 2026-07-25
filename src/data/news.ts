@@ -4,6 +4,13 @@ export interface NewsBild {
   bildunterschrift?: string
 }
 
+export interface NewsFoerderer {
+  name: string
+  logo: string
+  alt: string
+  url: string
+}
+
 export interface NewsItem {
   slug: string
   datum: string
@@ -12,6 +19,7 @@ export interface NewsItem {
   vorspann?: string
   absaetze: { titel?: string; text: string }[]
   bilder: NewsBild[]
+  foerderer?: NewsFoerderer[]
 }
 
 export const news: NewsItem[] = [
@@ -49,8 +57,28 @@ export const news: NewsItem[] = [
     ],
     bilder: [
       {
-        src: "/media/news/dialogp.jpg",
+        src: "/media/news/dialogp-06.jpg",
         alt: "Schülerinnen und Schüler im Gespräch mit Landtagsabgeordneten während der DialogP-Veranstaltung",
+      },
+      {
+        src: "/media/news/dialogp-01.jpg",
+        alt: "Eine Abgeordnete im Gespräch mit Schülerinnen und Schülern an einem Gruppentisch, im Hintergrund ein DialogP-Plakat",
+      },
+      {
+        src: "/media/news/dialogp-02.jpg",
+        alt: "Schülerinnen und Schüler verfolgen einen Videobeitrag auf der Leinwand in der Aula",
+      },
+      {
+        src: "/media/news/dialogp-03.jpg",
+        alt: "Diskussion an einem Gruppentisch mit einer Abgeordneten, auf dem Tisch liegen Pro- und Contra-Karten",
+      },
+      {
+        src: "/media/news/dialogp-04.jpg",
+        alt: "Schülerinnen und Schüler halten bei einer Abstimmung ihre Pro- und Contra-Karten hoch",
+      },
+      {
+        src: "/media/news/dialogp-05.jpg",
+        alt: "Die vier teilnehmenden Landtagsabgeordneten mit Pro- und Contra-Karten vor der Bühne",
       },
     ],
   },
@@ -92,6 +120,20 @@ export const news: NewsItem[] = [
       {
         src: "/media/news/makerspace-02.jpg",
         alt: "Arbeiten an den Geräten im Makerspace",
+      },
+    ],
+    foerderer: [
+      {
+        name: "ZUKUNFT MITGEMACHT",
+        logo: "/media/news/makerspace-logo-zukunft-mitgemacht.jpg",
+        alt: "Logo der Initiative ZUKUNFT MITGEMACHT",
+        url: "https://www.zukunftmitgemacht.de/",
+      },
+      {
+        name: "Wir für Schule",
+        logo: "/media/news/makerspace-logo-wir-fuer-schule.jpg",
+        alt: "Logo der Initiative Wir für Schule",
+        url: "https://www.wirfuerschule.de/",
       },
     ],
   },

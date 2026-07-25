@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, ExternalLink } from "lucide-react"
 import PageHeader from "../components/PageHeader"
 import FadeIn from "../components/FadeIn"
 import { news } from "../data/news"
@@ -75,6 +75,35 @@ export default function NewsDetail() {
             </div>
           ))}
         </div>
+
+        {beitrag.foerderer && beitrag.foerderer.length > 0 && (
+          <FadeIn className="mt-12">
+            <h2 className="text-xl font-semibold tracking-tight">Gefördert durch</h2>
+            <ul className="mt-6 grid gap-5 sm:grid-cols-2">
+              {beitrag.foerderer.map((f) => (
+                <li key={f.url}>
+                  <a
+                    href={f.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-2xl border border-brand-500 hover:border-brand-700 hover:bg-brand-50 transition-colors p-5 flex flex-col items-center gap-3 h-full group"
+                  >
+                    <img
+                      src={asset(f.logo)}
+                      alt={f.alt}
+                      className="max-h-16 w-auto object-contain"
+                      loading="lazy"
+                    />
+                    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-700 group-hover:text-brand-800">
+                      {f.name}
+                      <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </FadeIn>
+        )}
 
         {weitereBilder.length > 0 && (
           <FadeIn className="mt-12">
