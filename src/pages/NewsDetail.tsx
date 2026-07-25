@@ -65,16 +65,18 @@ export default function NewsDetail() {
           </FadeIn>
         )}
 
-        <div className="mt-10 space-y-6">
-          {beitrag.absaetze.map((absatz, i) => (
-            <div key={i}>
-              {absatz.titel && (
-                <h2 className="text-xl font-semibold tracking-tight mb-2">{absatz.titel}</h2>
-              )}
-              <p className="text-ink-600 leading-relaxed">{absatz.text}</p>
-            </div>
-          ))}
-        </div>
+        {beitrag.absaetze.length > 0 && (
+          <div className="mt-10 space-y-6">
+            {beitrag.absaetze.map((absatz, i) => (
+              <div key={i}>
+                {absatz.titel && (
+                  <h2 className="text-xl font-semibold tracking-tight mb-2">{absatz.titel}</h2>
+                )}
+                <p className="text-ink-600 leading-relaxed">{absatz.text}</p>
+              </div>
+            ))}
+          </div>
+        )}
 
         {beitrag.foerderer && beitrag.foerderer.length > 0 && (
           <FadeIn className="mt-12">

@@ -61,7 +61,8 @@ Auszeichnungen (Gesundheitsfördernde Schule, MINT, Umweltschule), Förderverein
 Kooperationen, Schulleitung, Sekretariat und Hausmeister inkl. Porträtfotos,
 Unterrichtszeiten, Gebäude/Lageplan, Organigramm, alle fünf Bildungsgänge als
 Detailseiten mit Volltext, Weitere Angebote (Moodle, ICDL, QuABB, UBUS,
-Übungsfirmen), News-Volltexte inkl. Bildern, Service/Downloads inkl. Blockplänen,
+Übungsfirmen), News-Volltexte inkl. Bildern, Bilderserien der BG-/FOS-
+Verabschiedung, Service/Downloads inkl. Blockplänen,
 Bereich „125 Jahre", Anreise, Instagram-Verlinkung. Alle Bilder liegen unter
 `public/media/`, alle PDFs unter `public/dokumente/`.
 
@@ -73,8 +74,10 @@ Noch offen:
 - [ ] Kurzfilme zu den BG-/FOS-Schwerpunkten (fünf MP4-Dateien auf der Altseite):
       Einbindung und Hosting klären, statt sie ins Repo zu legen.
 - [ ] Aktualisiertes Organigramm (die übernommene Grafik ist von 2020).
-- [ ] Bildergalerien der News (Fußballturnier, BG-/FOS-Verabschiedung mit je
-      15–21 Fotos): Persönlichkeitsrechte/Einwilligungen vor Übernahme klären.
+- [ ] Bildergalerie des News-Beitrags „Fußballturnier" (15 Fotos):
+      Persönlichkeitsrechte/Einwilligungen vor Übernahme klären. Für die beiden
+      Bilderserien der BG-/FOS-Verabschiedung liegen die Einwilligungen laut
+      Nutzer vor (Stand 25.07.2026), sie sind übernommen.
 - [ ] Presse- und Galerie-Archiv der Altseite (`/index.php/presse/…`,
       `/index.php/galerie/…`) sichten – wird es weiter benötigt?
 
