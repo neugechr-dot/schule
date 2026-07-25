@@ -178,3 +178,9 @@ body {
   outline: 2px solid var(--color-brand-500);
   outline-offset: 2px;
 }
+
+h1[id],
+h2[id],
+h3[id] {
+  scroll-margin-top: 6rem;
+}

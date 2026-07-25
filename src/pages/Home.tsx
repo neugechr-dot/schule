@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom"
-import { ArrowRight, CalendarDays, MapPin, Phone } from "lucide-react"
+import { ArrowRight, CalendarDays, FileText, MapPin, Phone } from "lucide-react"
 import FadeIn from "../components/FadeIn"
 import { LiquidMetalButton } from "@/components/ui/liquid-metal-button"
 import { bildungsgaenge } from "../data/bildungsgaenge"
 import { termine, sprechzeitenSommerferien } from "../data/termine"
 import { news } from "../data/news"
 import { schulinfo } from "../data/schule"
+import { blockplaeneSchuljahr } from "../data/downloads"
+import { asset } from "../lib/asset"
 
 const datumFormat = new Intl.DateTimeFormat("de-DE", {
   day: "2-digit",
@@ -76,7 +78,7 @@ export default function Home() {
             <FadeIn key={bg.slug} delay={i * 0.1}>
               <Link
                 to={`/bildungsgaenge/${bg.slug}`}
-                className="rounded-2xl group block bg-ink-50 hover:bg-brand-50 transition-colors p-6 h-full"
+                className="rounded-2xl border border-brand-500 group block bg-ink-50 hover:bg-brand-50 hover:border-brand-700 transition-colors p-6 h-full"
               >
                 <bg.icon className="w-8 h-8 text-brand-600" aria-hidden="true" />
                 <p className="mt-4 text-xs font-semibold tracking-wider uppercase text-brand-700">
@@ -94,7 +96,7 @@ export default function Home() {
           <FadeIn delay={bildungsgaenge.length * 0.1}>
             <Link
               to="/bildungsgaenge"
-              className="rounded-2xl flex flex-col items-start justify-center bg-ink-900 text-white p-6 h-full group"
+              className="rounded-2xl border border-brand-500 flex flex-col items-start justify-center bg-ink-900 text-white p-6 h-full group"
             >
               <p className="text-lg font-semibold">Alle Angebote im Überblick</p>
               <span className="mt-3 inline-flex items-center gap-2 text-brand-400 text-sm font-medium">
@@ -114,7 +116,7 @@ export default function Home() {
           </h2>
           <ul className="mt-6 space-y-4">
             {termine.map((t) => (
-              <li key={t.titel} className="rounded-2xl bg-ink-50 p-5">
+              <li key={t.titel} className="rounded-2xl border border-brand-500 bg-ink-50 p-5">
                 <time dateTime={t.datum} className="text-sm font-semibold text-brand-700">
                   {datumFormat.format(new Date(t.datum))}
                 </time>
@@ -125,7 +127,7 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <div className="rounded-2xl mt-5 border border-ink-100 p-5">
+          <div className="rounded-2xl mt-5 border border-brand-500 p-5">
             <p className="font-medium">Sprechzeiten der Schulleitung</p>
             <p className="mt-1 text-sm text-ink-600 leading-relaxed">
               {sprechzeitenSommerferien.hinweis}
@@ -134,6 +136,24 @@ export default function Home() {
               {sprechzeitenSommerferien.notfallkontakt}
             </p>
           </div>
+          <Link
+            to="/service#blockplaene-heading"
+            className="rounded-2xl mt-5 border border-brand-500 hover:border-brand-700 hover:bg-brand-50 transition-colors p-5 flex items-start gap-4 group"
+          >
+            <FileText className="w-6 h-6 shrink-0 text-brand-600" aria-hidden="true" />
+            <span className="flex-1">
+              <span className="block font-medium group-hover:text-brand-700 transition-colors">
+                Blockpläne {blockplaeneSchuljahr}
+              </span>
+              <span className="mt-1 block text-sm text-ink-600 leading-relaxed">
+                Alle Blockpläne für die Klassen mit Blockbeschulung als PDF.
+              </span>
+            </span>
+            <ArrowRight
+              className="w-4 h-4 mt-1 shrink-0 text-brand-700 group-hover:translate-x-1 transition-transform"
+              aria-hidden="true"
+            />
+          </Link>
         </FadeIn>
 
         <FadeIn delay={0.15}>
@@ -145,14 +165,24 @@ export default function Home() {
               <li key={n.slug}>
                 <Link
                   to={`/aktuelles/${n.slug}`}
-                  className="rounded-2xl group block bg-ink-50 hover:bg-brand-50 transition-colors p-5"
+                  className="rounded-2xl border border-brand-500 group flex items-center gap-4 bg-ink-50 hover:bg-brand-50 hover:border-brand-700 transition-colors p-4 overflow-hidden"
                 >
-                  <time dateTime={n.datum} className="text-sm text-ink-600">
-                    {datumFormat.format(new Date(n.datum))}
-                  </time>
-                  <p className="mt-1 font-medium group-hover:text-brand-700 transition-colors">
-                    {n.titel}
-                  </p>
+                  {n.bilder[0] && (
+                    <img
+                      src={asset(n.bilder[0].src)}
+                      alt={n.bilder[0].alt}
+                      className="w-24 h-24 shrink-0 rounded-xl object-cover"
+                      loading="lazy"
+                    />
+                  )}
+                  <span className="min-w-0">
+                    <time dateTime={n.datum} className="block text-sm text-ink-600">
+                      {datumFormat.format(new Date(n.datum))}
+                    </time>
+                    <span className="mt-1 block font-medium group-hover:text-brand-700 transition-colors">
+                      {n.titel}
+                    </span>
+                  </span>
                 </Link>
               </li>
             ))}
@@ -169,7 +199,7 @@ export default function Home() {
 
       <section className="mx-auto max-w-6xl px-4 md:px-8 mt-20 md:mt-28" aria-labelledby="kontakt-heading">
         <FadeIn>
-          <div className="rounded-2xl bg-ink-900 text-white p-8 md:p-12 grid gap-8 md:grid-cols-2 md:items-center">
+          <div className="rounded-2xl border border-brand-500 bg-ink-900 text-white p-8 md:p-12 grid gap-8 md:grid-cols-2 md:items-center">
             <div>
               <h2 id="kontakt-heading" className="text-2xl md:text-3xl font-semibold tracking-tight">
                 Fragen? Wir sind für euch da.
