@@ -81,12 +81,18 @@ export default function BildungsgangDetail() {
           <FadeIn className="mt-12">
             <section aria-labelledby="videos-heading">
               <h2 id="videos-heading" className="text-2xl font-semibold tracking-tight">
-                Filme zum Bildungsgang
+                {bg.videos.length > 1 ? "Filme zum Bildungsgang" : "Film zum Bildungsgang"}
               </h2>
               <p className="mt-3 text-ink-600 leading-relaxed">
-                Schülerinnen und Schüler stellen den Bildungsgang und seine Schwerpunkte vor.
+                {bg.videos.length > 1
+                  ? "Der Bildungsgang und seine Schwerpunkte im Film vorgestellt."
+                  : "Der Bildungsgang im Film vorgestellt."}
               </p>
-              <div className="mt-6 grid gap-6 md:grid-cols-2">
+              <div
+                className={`mt-6 grid gap-6 ${
+                  bg.videos.length > 1 ? "md:grid-cols-2" : "max-w-2xl"
+                }`}
+              >
                 {bg.videos.map((video) => (
                   <figure key={video.datei}>
                     <video
@@ -108,7 +114,6 @@ export default function BildungsgangDetail() {
                   </figure>
                 ))}
               </div>
-              {/* TODO: Untertitel/Transkripte fehlen - fuer BITV 2.0 bei den Filmen nachreichen */}
             </section>
           </FadeIn>
         )}

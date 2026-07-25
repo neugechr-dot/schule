@@ -62,7 +62,7 @@ Kooperationen, Schulleitung, Sekretariat und Hausmeister inkl. Porträtfotos,
 Unterrichtszeiten, Gebäude/Lageplan, Organigramm, alle fünf Bildungsgänge als
 Detailseiten mit Volltext, Weitere Angebote (Moodle, ICDL, QuABB, UBUS,
 Übungsfirmen), News-Volltexte inkl. Bildern, Bilderserien der BG-/FOS-
-Verabschiedung, vier Infofilme des BG, Service/Downloads inkl. Blockplänen,
+Verabschiedung, Infofilme von BG und FOS, Service/Downloads inkl. Blockplänen,
 Bereich „125 Jahre", Anreise, Instagram-Verlinkung. Alle Bilder liegen unter
 `public/media/`, alle PDFs unter `public/dokumente/`.
 
@@ -71,9 +71,9 @@ Noch offen:
       Gruppenfotos, keine Namen. Aktuelle Liste bei der Schule anfordern.
 - [ ] Vertretungsplan – der Menüpunkt der Altseite liefert einen 404. Verfahren
       und Zugang (DSBmobile/Untis?) klären.
-- [ ] Untertitel/Transkripte für die vier BG-Filme – für BITV 2.0 nötig, liegen
-      von der Altseite nicht vor.
-- [ ] Kurzfilm der FOS (`05_…`) auf der Altseite: übernehmen wie die BG-Filme?
+- [ ] Untertitel/Transkripte für die fünf Infofilme – für BITV 2.0 nötig, liegen
+      von der Altseite nicht vor. Vom Nutzer am 25.07.2026 ausdrücklich
+      zurückgestellt.
 - [ ] Aktualisiertes Organigramm (die übernommene Grafik ist von 2020).
 - [ ] Bildergalerie des News-Beitrags „Fußballturnier" (15 Fotos):
       Persönlichkeitsrechte/Einwilligungen vor Übernahme klären. Für die beiden

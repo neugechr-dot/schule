@@ -157,6 +157,14 @@ export const bildungsgaenge: Bildungsgang[] = [
         text: "Seit 2003 an der Schule. Zusätzlich zur Bewerbung ist ein Nachweis der gestalterischen Befähigung erforderlich; im Februar finden dazu Informationsveranstaltungen statt.",
       },
     ],
+    videos: [
+      {
+        titel: "Info-Film",
+        beschreibung: "Die Fachoberschule an den Beruflichen Schulen Bebra im Überblick.",
+        datei: "/media/videos/fos-infofilm.mp4",
+        poster: "/media/videos/fos-infofilm-poster.png",
+      },
+    ],
     abschnitte: [
       {
         titel: "Ziel",
