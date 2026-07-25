@@ -40,6 +40,34 @@ export interface Bildungsgang {
   dokumente: Dokument[]
 }
 
+export const fosAufnahme = {
+  gemeinsam: [
+    "Mittlerer Abschluss – zum Beispiel an einer Gesamtschule, Realschule oder Berufsfachschule – mit in Deutsch, Englisch und Mathematik mindestens zweimal der Note 3 und einmal der Note 4",
+    "oder die Versetzung in die Einführungsphase der gymnasialen Oberstufe",
+  ],
+  formen: [
+    {
+      name: "Organisationsform A",
+      klassen: "Klassen 11 und 12",
+      voraussetzungen: [
+        "Eignungsfeststellung der abgebenden Schule",
+        "Bescheinigung über die Schullaufbahnberatung oder Berufsberatung",
+        "Zusage über die fachpraktische Ausbildung (Praktikumsplatz)",
+      ],
+    },
+    {
+      name: "Organisationsform B",
+      klassen: "Klasse 12",
+      voraussetzungen: [
+        "Nachweis einer Abschlussprüfung in einem anerkannten Ausbildungsberuf, der dem gewählten Schwerpunkt entspricht",
+      ],
+      hinweis:
+        "Nicht hinreichende Noten können durch ein Abschlusszeugnis der Berufsschule mit einer Gesamtnote von 3,0 ersetzt werden.",
+    },
+  ],
+  frist: "Der Antrag auf Aufnahme muss bis spätestens 31. März vorliegen.",
+} as const
+
 export const bildungsgaenge: Bildungsgang[] = [
   {
     slug: "berufliches-gymnasium",

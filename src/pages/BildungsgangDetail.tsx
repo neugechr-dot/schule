@@ -3,7 +3,7 @@ import { ArrowLeft, ExternalLink } from "lucide-react"
 import PageHeader from "../components/PageHeader"
 import FadeIn from "../components/FadeIn"
 import DownloadListe from "../components/DownloadListe"
-import { bildungsgaenge, lehrplanFachschule } from "../data/bildungsgaenge"
+import { bildungsgaenge, fosAufnahme, lehrplanFachschule } from "../data/bildungsgaenge"
 import { asset } from "../lib/asset"
 
 export default function BildungsgangDetail() {
@@ -147,28 +147,63 @@ export default function BildungsgangDetail() {
               <h2 id="fos-grafiken-heading" className="text-2xl font-semibold tracking-tight">
                 Einordnung und Aufnahmevoraussetzungen
               </h2>
-              <div className="mt-6 grid gap-5 md:grid-cols-2">
-                <figure>
-                  <img
-                    src={asset("/media/angebote/fos-schulwesen.jpg")}
-                    alt="Schaubild zur Einordnung der Fachoberschule im hessischen Schulwesen"
-                    className="rounded-2xl w-full border border-ink-100"
-                  />
-                  <figcaption className="mt-2 text-sm text-ink-600">
-                    Einordnung der FOS im hessischen Schulwesen
-                  </figcaption>
-                </figure>
-                <figure>
-                  <img
-                    src={asset("/media/angebote/fos-aufnahmevoraussetzungen.jpg")}
-                    alt="Tabelle mit den Aufnahmevoraussetzungen für die Fachoberschule"
-                    className="rounded-2xl w-full border border-ink-100"
-                  />
-                  <figcaption className="mt-2 text-sm text-ink-600">
-                    Aufnahmevoraussetzungen im Überblick
-                  </figcaption>
-                </figure>
+              <figure className="mt-6 max-w-2xl">
+                <img
+                  src={asset("/media/angebote/fos-schulwesen.jpg")}
+                  alt="Schaubild zur Einordnung der Fachoberschule im hessischen Schulwesen"
+                  className="rounded-2xl w-full border border-ink-100"
+                />
+                <figcaption className="mt-2 text-sm text-ink-600">
+                  Einordnung der FOS im hessischen Schulwesen
+                </figcaption>
+              </figure>
+
+              <h3 className="mt-10 text-xl font-semibold tracking-tight">
+                Voraussetzungen für beide Organisationsformen
+              </h3>
+              <p className="mt-3 text-ink-600 leading-relaxed">
+                Für die Aufnahme in die Fachoberschule ist unabhängig von der gewählten
+                Organisationsform einer der beiden folgenden Abschlüsse nachzuweisen:
+              </p>
+              <ul className="mt-4 space-y-2">
+                {fosAufnahme.gemeinsam.map((punkt) => (
+                  <li key={punkt} className="flex gap-3 text-ink-600 leading-relaxed">
+                    <span aria-hidden="true" className="mt-2 w-1.5 h-1.5 bg-brand-500 shrink-0" />
+                    {punkt}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8 grid gap-5 md:grid-cols-2">
+                {fosAufnahme.formen.map((form) => (
+                  <div key={form.name} className="rounded-2xl border border-brand-500 p-6">
+                    <h3 className="font-semibold text-brand-700">{form.name}</h3>
+                    <p className="mt-1 text-sm text-ink-600">{form.klassen}</p>
+                    <p className="mt-4 text-sm font-medium">Zusätzlich erforderlich:</p>
+                    <ul className="mt-3 space-y-2">
+                      {form.voraussetzungen.map((punkt) => (
+                        <li
+                          key={punkt}
+                          className="flex gap-3 text-sm text-ink-600 leading-relaxed"
+                        >
+                          <span
+                            aria-hidden="true"
+                            className="mt-1.5 w-1.5 h-1.5 bg-brand-500 shrink-0"
+                          />
+                          {punkt}
+                        </li>
+                      ))}
+                    </ul>
+                    {"hinweis" in form && (
+                      <p className="mt-4 text-sm text-ink-600 leading-relaxed">{form.hinweis}</p>
+                    )}
+                  </div>
+                ))}
               </div>
+
+              <p className="mt-6 rounded-2xl bg-brand-50 border border-brand-500 p-5 font-medium">
+                {fosAufnahme.frist}
+              </p>
             </section>
           </FadeIn>
         )}
