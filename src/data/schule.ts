@@ -36,33 +36,33 @@ export const schulleitung: Person[] = [
     rolle: "Abteilungsleiter II",
     seit: "seit 2018, an der Schule seit 1994",
     faecher: "Bautechnik, Religion",
-    foto: "/media/team/roessler.jpg",
+    foto: "/media/team/roessler.png",
   },
   {
     name: "Roberto Weyh",
     rolle: "Abteilungsleiter IV",
     seit: "seit Februar 2018, an der Schule seit 2000",
     faecher: "Wirtschaft und Verwaltung, Informationstechnik, Spanisch",
-    foto: "/media/team/weyh.jpg",
+    foto: "/media/team/weyh.png",
   },
   {
     name: "Klaus Weger",
     rolle: "Technischer Lehrerkoordinator",
     seit: "seit 2014",
     faecher: "Holztechnik",
-    foto: "/media/team/weger.jpg",
+    foto: "/media/team/weger.png",
   },
 ]
 
 export const sekretariat: Person[] = [
   { name: "Carola Bolz", rolle: "Schulsekretariat", foto: "/media/team/bolz.png" },
-  { name: "Pia Weber", rolle: "Schulsekretariat", foto: "/media/team/weber.jpg" },
-  { name: "Elisa Köhler", rolle: "Schulsekretariat", foto: "/media/team/koehler.jpg" },
+  { name: "Pia Weber", rolle: "Schulsekretariat", foto: "/media/team/weber.png" },
+  { name: "Elisa Köhler", rolle: "Schulsekretariat", foto: "/media/team/koehler.png" },
 ]
 
 export const hausmeister: Person[] = [
-  { name: "Dirk Meise", rolle: "Hausmeister", foto: "/media/team/meise.jpg" },
-  { name: "Dirk Diehl", rolle: "Hausmeister", foto: "/media/team/diehl.jpg" },
+  { name: "Dirk Meise", rolle: "Hausmeister", foto: "/media/team/meise.png" },
+  { name: "Dirk Diehl", rolle: "Hausmeister", foto: "/media/team/diehl.png" },
 ]
 
 export const verwaltung = {
